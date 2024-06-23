@@ -33,8 +33,32 @@ To get started using YOLOv9's developer mode, we recommand you clone this reposi
 ```shell
 git clone git@github.com:WongKinYiu/YOLO.git
 cd YOLO
-pip install -r requirements.txt
 ```
+- HostPC
+  ```shell
+  pip install -r requirements.txt
+  ```
+- Docker with CUDA/TensorRT
+  ```shell
+  docker build -t yolo:latest -f Dockerfile.gpu .
+  docker run \
+  --rm \
+  -it \
+  --gpus all \
+  -v `pwd`:/home/user/workdir \
+  -w /home/user/workdir \
+  yolo:latest
+  ```
+- Docker with CPU
+  ```shell
+  docker build -t yolo:latest -f Dockerfile.cpu .
+  docker run \
+  --rm \
+  -it \
+  -v `pwd`:/home/user/workdir \
+  -w /home/user/workdir \
+  yolo:latest
+  ```
 
 ## Features
 

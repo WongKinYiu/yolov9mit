@@ -119,8 +119,10 @@ runs
 # Datasets and model checkpoints
 *.pth
 *.pt
-*.trt
 *.onnx
+*.engine
+*.profile
+*.trt
 
 # Image files
 *.png
